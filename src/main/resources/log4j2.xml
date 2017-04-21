@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Properties>
+        <!--<Property name="baseDir">${sys:logPath}</Property>-->
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%thread] [%c{1.}:%L] - %msg%n"/>
+        </Console>
+
+        <!--<RollingRandomAccessFile name="File" fileName="${baseDir}/app.log"
+                                 filePattern="${baseDir}/$${date:yyyy-MM}/app-%d{yyyyMMdd}.log.gz">
+            <PatternLayout pattern="%msg%n"/>
+            <Policies>
+                &lt;!&ndash; 按天备份 &ndash;&gt;
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingRandomAccessFile>-->
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
